@@ -1,8 +1,9 @@
 import { Box, Button, Container, Stack } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import reportWebVitals from "../../../reportWebVitals";
+import Basket from "./Basket";
 
-export function HomeNavbar() {
+export default function HomeNavbar() {
   const authMember = false;
 
   return (
@@ -44,7 +45,7 @@ export function HomeNavbar() {
                 Help
               </NavLink>
             </Box>
-            {/* BASKET*/}
+            <Basket />
 
             {!authMember ? (
               <Box>
@@ -70,10 +71,9 @@ export function HomeNavbar() {
             <Box className={"service-txt"}>24 hours service</Box>
             <Box className={"signup"}>
               {!authMember ? (
-                <Button
-                  variant="contained"
-                  className={"signup-button"}
-                >SIGN UP</Button>
+                <Button variant="contained" className={"signup-button"}>
+                  SIGN UP
+                </Button>
               ) : null}
             </Box>
           </Stack>
