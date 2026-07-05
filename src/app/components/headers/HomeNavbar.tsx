@@ -1,47 +1,46 @@
 import { Box, Button, Container, Stack } from "@mui/material";
 import { NavLink } from "react-router-dom";
-import reportWebVitals from "../../../reportWebVitals";
 import Basket from "./Basket";
 
 export default function HomeNavbar() {
-  const authMember = false;
+  const authMember = null;
 
   return (
     <div className="home-navbar">
       <Container className="navbar-container">
         <Stack className="menu">
           <Box>
-            <NavLink to={"/"}>
-              <img className="brand-logo" src="/icons/burak.svg" />
+            <NavLink to="/">
+              <img className="brand-logo" src="/icons/bumarak.svg" />
             </NavLink>
           </Box>
           <Stack className="links">
             <Box className={"hover-line"}>
-              <NavLink to={"/"} activeClassName="underline">
+              <NavLink to="/" activeClassName={"underline"}>
                 Home
               </NavLink>
             </Box>
             <Box className={"hover-line"}>
-              <NavLink to={"/products"} activeClassName="underline">
+              <NavLink to="/products" activeClassName={"underline"}>
                 Products
               </NavLink>
             </Box>
             {authMember ? (
               <Box className={"hover-line"}>
-                <NavLink to={"/orders"} activeClassName="underline">
+                <NavLink to="/orders" activeClassName={"underline"}>
                   Orders
                 </NavLink>
               </Box>
             ) : null}
             {authMember ? (
               <Box className={"hover-line"}>
-                <NavLink to={"/member-page"} activeClassName="underline">
+                <NavLink to="/member-page" activeClassName={"underline"}>
                   My Page
                 </NavLink>
               </Box>
             ) : null}
             <Box className={"hover-line"}>
-              <NavLink to={"/help"} activeClassName="underline">
+              <NavLink to="/help" activeClassName={"underline"}>
                 Help
               </NavLink>
             </Box>
@@ -56,8 +55,8 @@ export default function HomeNavbar() {
             ) : (
               <img
                 className="user-avatar"
-                src={"./icons/default-user.svg"}
-                aria-hospopup={true}
+                src={"/icons/default-user.svg"}
+                aria-haspopup={"true"}
               />
             )}
           </Stack>
@@ -71,7 +70,7 @@ export default function HomeNavbar() {
             <Box className={"service-txt"}>24 hours service</Box>
             <Box className={"signup"}>
               {!authMember ? (
-                <Button variant="contained" className={"signup-button"}>
+                <Button variant={"contained"} className={"signup-button"}>
                   SIGN UP
                 </Button>
               ) : null}

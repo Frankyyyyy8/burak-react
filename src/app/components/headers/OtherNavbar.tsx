@@ -10,35 +10,35 @@ export default function OtherNavbar() {
       <Container className="navbar-container">
         <Stack className="menu">
           <Box>
-            <NavLink to={"/"}>
-              <img className="brand-logo" src="/icons/burak.svg" />
+            <NavLink to="/">
+              <img className="brand-logo" src="/icons/bumarak.svg" />
             </NavLink>
           </Box>
           <Stack className="links">
             <Box className={"hover-line"}>
-              <NavLink to={"/"}>Home</NavLink>
+              <NavLink to="/">Home</NavLink>
             </Box>
             <Box className={"hover-line"}>
-              <NavLink to={"/products"} activeClassName="underline">
+              <NavLink to="/products" activeClassName={"underline"}>
                 Products
               </NavLink>
             </Box>
             {authMember ? (
               <Box className={"hover-line"}>
-                <NavLink to={"/orders"} activeClassName="underline">
+                <NavLink to="/orders" activeClassName={"underline"}>
                   Orders
                 </NavLink>
               </Box>
             ) : null}
             {authMember ? (
               <Box className={"hover-line"}>
-                <NavLink to={"/member-page"} activeClassName="underline">
+                <NavLink to="/member-page" activeClassName={"underline"}>
                   My Page
                 </NavLink>
               </Box>
             ) : null}
             <Box className={"hover-line"}>
-              <NavLink to={"/help"} activeClassName="underline">
+              <NavLink to="/help" activeClassName={"underline"}>
                 Help
               </NavLink>
             </Box>
@@ -53,8 +53,8 @@ export default function OtherNavbar() {
             ) : (
               <img
                 className="user-avatar"
-                src={"./icons/default-user.svg"}
-                aria-label="user-avatar"
+                src={"/icons/default-user.svg"}
+                aria-haspopup={"true"}
               />
             )}
           </Stack>
