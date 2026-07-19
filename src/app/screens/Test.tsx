@@ -8,7 +8,7 @@ class Test extends Component {
       brand: "Ford",
       model: "Mustang",
       color: "red",
-      year: 1964,
+      year: 1965,
     };
   }
 
