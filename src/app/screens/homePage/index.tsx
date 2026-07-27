@@ -8,7 +8,7 @@ import Events from "./Events";
 import "../../../css/home.css";
 
 import { useDispatch, useSelector } from "react-redux";
-import { type Dispatch } from "@reduxjs/toolkit";
+import { Dispatch } from "@reduxjs/toolkit";
 import { createSelector } from "reselect";
 import { setPopularDishes } from "./slice";
 import type { Product } from "../../../lib/types/product";
