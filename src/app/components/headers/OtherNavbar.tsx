@@ -1,4 +1,12 @@
-import { Box, Button, Container, ListItemIcon, Menu, MenuItem, Stack } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  ListItemIcon,
+  Menu,
+  MenuItem,
+  Stack,
+} from "@mui/material";
 import { NavLink } from "react-router-dom";
 import Basket from "./Basket";
 import { CartItem } from "../../../lib/types/search";
@@ -13,12 +21,11 @@ interface OtherNavbarProps {
   onDeleteAll: () => void;
   setSignupOpen: (isOpen: boolean) => void;
   setLoginOpen: (isOpen: boolean) => void;
-   handleLogoutClick: (e: React.MouseEvent<HTMLElement>) => void;
+  handleLogoutClick: (e: React.MouseEvent<HTMLElement>) => void;
   anchorEl: HTMLElement | null;
   handleCLoseLogout: () => void;
   handleLogoutRequest: () => void;
 }
-
 
 export default function OtherNavbar(props: OtherNavbarProps) {
   const {
@@ -93,7 +100,7 @@ export default function OtherNavbar(props: OtherNavbarProps) {
               </Box>
             ) : (
               <img
-                 className="user-avatar"
+                className="user-avatar"
                 src={
                   authMember?.memberImage
                     ? `${authMember?.memberImage}`
@@ -105,6 +112,7 @@ export default function OtherNavbar(props: OtherNavbarProps) {
             )}
             <Menu
               id="account-menu"
+              anchorEl={anchorEl}
               open={Boolean(anchorEl)}
               onClose={handleCLoseLogout}
               onClick={handleCLoseLogout}

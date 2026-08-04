@@ -117,6 +117,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
 
             <Menu
               id="account-menu"
+              anchorEl={anchorEl}
               open={Boolean(anchorEl)}
               onClose={handleCLoseLogout}
               onClick={handleCLoseLogout}
