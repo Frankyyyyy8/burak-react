@@ -12,13 +12,13 @@ import { json } from "stream/consumers";
 import { LocalAtmRounded } from "@mui/icons-material";
 import useBasket from "./hooks/useBasket";
 import AuthenticationModal from "./components/auth";
-import "../css/app.css";
-import "../css/navbar.css";
-import "../css/footer.css";
 import { sweetErrorHandling, sweetTopSuccessAlert } from "../lib/sweetAlert";
 import { Messages } from "../lib/config";
 import MemberService from "./services/MemberService";
 import { useGlobals } from "./hooks/useGlobals";
+import "../css/app.css";
+import "../css/navbar.css";
+import "../css/footer.css";
 
 function App() {
   const location = useLocation();
