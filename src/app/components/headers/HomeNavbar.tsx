@@ -13,6 +13,7 @@ import { useState, useEffect } from "react";
 import { CartItem } from "../../../lib/types/search";
 import { useGlobals } from "../../hooks/useGlobals";
 import { Logout } from "@mui/icons-material";
+import { serverApi } from "../../../lib/config";
 
 interface HomeNavbarProps {
   cartItems: CartItem[];
@@ -24,7 +25,7 @@ interface HomeNavbarProps {
   setLoginOpen: (isOpen: boolean) => void;
   handleLogoutClick: (e: React.MouseEvent<HTMLElement>) => void;
   anchorEl: HTMLElement | null;
-  handleCLoseLogout: () => void;
+  handleCloseLogout: () => void;
   handleLogoutRequest: () => void;
 }
 
@@ -39,7 +40,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
     setLoginOpen,
     handleLogoutClick,
     anchorEl,
-    handleCLoseLogout,
+    handleCloseLogout,
     handleLogoutRequest,
   } = props;
   const { authMember } = useGlobals();
@@ -107,7 +108,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
                 className="user-avatar"
                 src={
                   authMember?.memberImage
-                    ? `${authMember?.memberImage}`
+                    ? `${serverApi}/${authMember?.memberImage}`
                     : "/icons/default-user.svg"
                 }
                 aria-haspopup={"true"}
@@ -119,8 +120,8 @@ export default function HomeNavbar(props: HomeNavbarProps) {
               id="account-menu"
               anchorEl={anchorEl}
               open={Boolean(anchorEl)}
-              onClose={handleCLoseLogout}
-              onClick={handleCLoseLogout}
+              onClose={handleCloseLogout}
+              onClick={handleCloseLogout}
               PaperProps={{
                 elevation: 0,
                 sx: {

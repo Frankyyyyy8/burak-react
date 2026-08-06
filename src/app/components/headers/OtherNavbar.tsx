@@ -12,6 +12,7 @@ import Basket from "./Basket";
 import { CartItem } from "../../../lib/types/search";
 import { useGlobals } from "../../hooks/useGlobals";
 import { Logout } from "@mui/icons-material";
+import { serverApi } from "../../../lib/config";
 
 interface OtherNavbarProps {
   cartItems: CartItem[];
@@ -23,7 +24,7 @@ interface OtherNavbarProps {
   setLoginOpen: (isOpen: boolean) => void;
   handleLogoutClick: (e: React.MouseEvent<HTMLElement>) => void;
   anchorEl: HTMLElement | null;
-  handleCLoseLogout: () => void;
+  handleCloseLogout: () => void;
   handleLogoutRequest: () => void;
 }
 
@@ -38,7 +39,7 @@ export default function OtherNavbar(props: OtherNavbarProps) {
     setLoginOpen,
     handleLogoutClick,
     anchorEl,
-    handleCLoseLogout,
+    handleCloseLogout,
     handleLogoutRequest,
   } = props;
   const { authMember } = useGlobals();
@@ -103,7 +104,7 @@ export default function OtherNavbar(props: OtherNavbarProps) {
                 className="user-avatar"
                 src={
                   authMember?.memberImage
-                    ? `${authMember?.memberImage}`
+                    ? `${serverApi}/${authMember?.memberImage}`
                     : "/icons/default-user.svg"
                 }
                 aria-haspopup={"true"}
@@ -114,8 +115,8 @@ export default function OtherNavbar(props: OtherNavbarProps) {
               id="account-menu"
               anchorEl={anchorEl}
               open={Boolean(anchorEl)}
-              onClose={handleCLoseLogout}
-              onClick={handleCLoseLogout}
+              onClose={handleCloseLogout}
+              onClick={handleCloseLogout}
               PaperProps={{
                 elevation: 0,
                 sx: {

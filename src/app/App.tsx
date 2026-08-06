@@ -62,7 +62,7 @@ function App() {
           setLoginOpen={setLoginOpen}
           anchorEl={anchorEl}
           handleLogoutClick={handleLogoutClick}
-          handleCLoseLogout={handleCloseLogout}
+          handleCloseLogout={handleCloseLogout}
           handleLogoutRequest={handleLogoutRequest}
         />
       ) : (
@@ -76,7 +76,7 @@ function App() {
           setLoginOpen={setLoginOpen}
           anchorEl={anchorEl}
           handleLogoutClick={handleLogoutClick}
-          handleCLoseLogout={handleCloseLogout}
+          handleCloseLogout={handleCloseLogout}
           handleLogoutRequest={handleLogoutRequest}
         />
       )}
